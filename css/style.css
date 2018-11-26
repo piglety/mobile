@@ -1,0 +1,190 @@
+
+/***********************************/
+/**************	Basic **************/
+/***********************************/
+a, a:hover, a:focus {color:inherit; text-decoration:none;}
+button:focus {outline:none;}
+h1, h2, h3, h4, h5, h6, ul, ol, li, dl, p {margin:0; padding:0;}
+ul {list-style:none;}
+hr {margin-top:10px; margin-bottom:10px;}
+
+
+
+/************************************/
+body.modal-open {overflow:hidden; position:fixed; width:100%; left:0; top:0;}
+
+.maskimg {background-repeat:no-repeat; background-size:cover; background-position:center; position:relative;}
+.maskimg img {width:100%;}
+
+.flex-wrap {
+	/* Center slide text vertically */
+	display: -webkit-box; display: -ms-flexbox; display: -webkit-flex; display: flex;
+	-webkit-box-pack: center; -ms-flex-pack: center;
+	-webkit-justify-content: center; justify-content: center;
+	-webkit-box-align: center; -ms-flex-align: center;
+	-webkit-align-items: center; align-items: center;
+}
+
+/*** Button :: Etc ***/
+.btn-fixed {position:fixed; left:0; right:0; bottom:0; z-index:10; font-size:0;}
+.btn-fixed .btn {width:100%; border-radius:0; font-size:17px; font-weight:bold; height:50px; line-height:50px; padding:0;}
+.btn-fixed.width-2 .btn {width:50%;}
+
+
+/**************	Swiper **************/
+.swiper-button-next, .swiper-button-prev {background-size:60%;}
+
+
+
+/************ Bootstrap ************/
+.container-fluid {padding:0;}
+.form-control {border-radius:0; border:1px solid #ddd; box-shadow:none; background:#fff; -webkit-appearance: none; height:35px;}
+input:focus, .form-control:focus, select:focus {border-color:#ddd; box-shadow:none; outline:none;}
+
+
+select.form-control {background:url(../img/select-down.png) no-repeat calc(100% - 10px) 50%; background-size:10px; padding-right:30px;}
+
+/************** Modal **************/
+.modal-dialog {margin:0; width: 100%;}
+.modal-body {height:calc(100% - 56px);}
+.modal-dialog, .modal-content {height:100%;}
+
+/************************************/
+/**************	Header **************/
+/************************************/
+header .tnb {height:50px; line-height:50px; border-bottom:1px solid #ccc; padding:0 10px; }
+header.fixed {margin-top:50px;}
+header.fixed .tnb {position:fixed; top:0; left:0; right:0; z-index:99; background:#fff;}
+header .logo-left {display:inline-block; vertical-align:middle; padding:0 10px;}
+header .logo-center {position:absolute; top:0; left:0; right:0; width:150px; margin:0 auto; text-align:center;}
+header .navi-right {float:right;}
+header .navi-right a {font-size:16px; color:#ccc; padding-left:5px; display:inline-block;}
+
+header #gnb {width: 100%; height: 40px; line-height:40px; border-bottom:1px solid #dedede;}
+header #gnb .swiper-slide {text-align: center; font-size: 13px; background: #fff; width:auto; padding:0 10px; color:#333;}
+header #gnb a {display:block;}
+
+/*** Bugger Button ***/
+.bugger {width:20px; height:20px; z-index:999; cursor:pointer; border:0; transition: all 0.5s; position:relative; display:inline-block; vertical-align:middle;}
+.bugger i {position:absolute; top:calc(50% - 1px); left:0px; width:100%; height:2px; transition-delay:0.1s; background:#000;}
+.bugger i:before, .bugger i:after {content: ""; display:block; width: inherit; height: inherit; transition: transform 0.3s cubic-bezier(0.5, 0, 0.25, 1), top 0.3s cubic-bezier(0.5, 0, 0.25, 1), bottom 0.3s cubic-bezier(0.5, 0, 0.25, 1); transform-origin: 50% 50% 0px; background:#000; position: absolute;}
+.bugger i:before {top:-6px;}
+.bugger i:after {bottom:-6px;}
+.active.bugger i {transition-delay:0s; background-color:transparent;}
+.active.bugger i:before {transform:rotate(45deg); -ms-transform:rotate(45deg); top:0px; background:#000;}
+.active.bugger i:after {transform:rotate(-45deg); -ms-transform:rotate(-45deg); bottom:0px; background:#000;}
+
+.slider-menu-overlay.active {position:fixed; width:100%; top:0; bottom:0; left:0; right:0; background:rgba(0,0,0,0.5); color:#fff; z-index:999;}
+
+
+/************************************/
+/**************	Footer **************/
+/************************************/
+footer {background:#f2f2f2; text-align:center; padding:20px 10px;}
+.bnb {margin:10px; padding:0; font-size:0;}
+.bnb li {display:inline-block; font-size:12px; color:#666;}
+.bnb li:after {content:''; display:inline-block; margin:0 8px; width:1px; height:9px; background:#ccc;}
+.bnb li:last-child:after {display:none;}
+.copyright {font-size:11px; color:#999;}
+
+
+
+
+
+
+/************************************/
+/**************	Items **************/
+/************************************/
+.caption {position:relative; margin:10px 0;}
+.caption p {margin-bottom:5px;}
+.caption h3.goodsnm {font-weight:bold; font-size:15px; color:#333; margin:20px 0 10px;}
+.caption .price {font-size:15px; font-weight:bold;}
+
+
+.items-title {display:table; width:100%; padding:10px 0; margin-top:10px; border-bottom:1px solid #ddd;}
+.items-title h5, .items-title span {display:table-cell; vertical-align:middle;}
+.items-title h5 {font-weight:bold; font-size:15px;}
+.items-title span {min-width:50px; text-align:right; color:#aaa;}
+.items-title span.list button {background:transparent; border:0; padding:0;}
+.items-title span.list .active {color:#555;}
+
+.items {font-size:0; margin-left:-10px; margin-right:-10px;}
+.items li {font-size:12px; display:inline-block; vertical-align:top; width:50%; padding:10px;}
+.items a {position:relative; display:block;}
+.items .caption .goodsnm {font-size:13px; color:#666; white-space: nowrap; text-overflow:ellipsis; overflow:hidden;}
+
+.items.th-list li {width:100%;}
+.items.th-list a {font-size:0;}
+.items.th-list .maskimg {width:33%; display:inline-block; vertical-align:middle;}
+.items.th-list .caption {width:67%; display:inline-block; margin:0; padding:10px; vertical-align:middle;}
+
+
+
+/************************************/
+/************ 상세페이지 ************/
+/************************************/
+.porduct-wrap {margin:15px 0;}
+
+.porduct-info {font-size:0;}
+.porduct-info dt, .porduct-info dd {display:inline-block; font-size:14px; vertical-align:middle; min-height:30px; padding:5px 0;}
+.porduct-info dt {width:80px; color:#999; font-weight:normal;}
+.porduct-info dd {width:calc(100% - 80px); color:#555;}
+
+/* 상품정보탭 */
+.tabs-content>div {display:none;}
+.tabs-content>div.active {display:block;}
+#product-tabs {position:relative; padding-top:40px;}
+#product-tabs .tabs-header {font-size:0; border-bottom:1px solid #ddd; background:#fff; position:absolute; top:0; left:0; right:0; z-index:5; margin:auto;}
+#product-tabs .tabs-header.active {position:fixed; top:50px;}
+#product-tabs .tabs-header li {display:inline-block; width:33.333%; font-size:14px; color:#999; text-align:center; padding:10px 0; position:relative;}
+#product-tabs .tabs-header li.active {color:#222; font-weight:bold;}
+#product-tabs .tabs-header li.active:after {content:''; position:absolute; bottom:-1px; left:0; right:0; width:100%; height:3px; background:#222;}
+#product-tabs .tabs-content {margin-top:15px;}
+
+.product-recommend ul {margin-left:-5px; margin-right:-5px;}
+.product-recommend li {width:33.333%; padding-left:5px; padding-right:5px;}
+
+/* 구매하기버튼 */
+.btn-toggle {position:fixed; left:0; right:0; bottom:-100%; z-index:1000; background:#fff; transition:bottom 0.8s; border-top:1px solid #ddd;}
+.btn-toggle.active {bottom:0; transition:bottom 0.3s;}
+.toggle-arrow {position:absolute; top:-25px; left:0; right:0; width:80px; height:25px; background:#666; margin:0 auto; text-align:center; border-radius:20px 20px 0 0;}
+.toggle-arrow i {font-size:22px; color:#f8f8f8; line-height:25px;}
+.btn-toggle dl {font-size:0; margin:0; padding:15px; background:#fafafa;}
+.btn-toggle dt, .btn-toggle dd {font-size:15px; display:inline-block; width:50%; vertical-align:middle; font-weight:normal; padding:5px 0;}
+.btn-toggle dd {text-align:right; }
+.btn-toggle dd.price b {font-size:25px; padding-left:10px;}
+.btn-toggle .width-2 {font-size:0;}
+.btn-toggle .width-2 .btn {padding:0; width:50%; border-radius:0; font-size:17px; font-weight:bold; height:50px; line-height:50px;}
+/*** 수량 ***/
+.spinner {font-size:0;}
+.spinner input, .spinner button {display:inline-block; vertical-align:top; margin-left:-1px; font-size:15px; border:1px solid #ddd; background:#fff; border-radius:0; text-align:center; width:50px; height:30px;}
+.spinner button {width:30px; padding:0;}
+.spinner button i {width:10px; height:10px; background-size:cover; background-repeat:no-repeat; display:block; margin:auto;}
+.icn-minus { background-image:url(../img/icn-minus.png);}
+.icn-plus {background-image:url(../img/icn-plus.png);}
+
+
+/*** review ***/
+.node-list li {padding:10px 0; border-bottom:1px solid #ddd; font-size:13px; color:#666;}
+.node-list p {margin:10px 0;}
+.clearfix .review-icn {margin-top:3px;}
+.review-icn i {color:#ccc;}
+.review-icn i.active {color:#f8b62a;}
+
+/*** paging ***/
+.page-nav {font-size:0;}
+.page-nav>li {font-size:12px; display:inline-block; margin:0 2px; color:#222; border:0;}
+.page-nav>li i {width:25px; height:25px; line-height:23px; border-radius:2px; border:1px solid #ddd; color:#999; font-size:16px;}
+.page-nav>li.num {padding: 0 10px;}
+.page-nav>li.num b {color:#2ac1bc;}
+
+
+
+/*** etc ***/
+.guidebox {border:1px solid #ddd; margin-bottom:10px;}
+.guidebox h6 {background:#f6f6f6; padding:13px;}
+.guidebox ul {padding:13px; line-height:1.5;}
+
+.ul-arrow li {position:relative; padding-left:5px;}
+.ul-arrow li {padding-bottom:5px; font-size:12px; color:#999;}
+.ul-arrow li:before {content:''; position:absolute; top:7px; left:0; width:2px; height:2px; background:#999;}

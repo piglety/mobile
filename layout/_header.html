@@ -1,0 +1,40 @@
+<header class="fixed">
+	<div class="tnb clearfix">
+		<div class="bugger"><i></i></div>
+		<div class="logo-center"><a href="../main/index.html">LOGO</a></div>
+		<div class="navi-right">
+			<a href="#"><i class="fa fa-search"></i></a>
+			<a href="#"><i class="fa fa-shopping-bag"></i></a>
+		</div>
+	</div>
+
+	<div id="gnb" class="swiper-container">
+		<div class="swiper-wrapper">
+			<div class="swiper-slide"><a href="#">여성의류</a></div>
+			<div class="swiper-slide"><a href="#">남성의류</a></div>
+			<div class="swiper-slide"><a href="#">디자인문구</a></div>
+			<div class="swiper-slide"><a href="#">가구/수납</a></div>
+			<div class="swiper-slide"><a href="#">인테리어</a></div>
+			<div class="swiper-slide"><a href="#">주방</a></div>
+			<div class="swiper-slide"><a href="#">가전/생활</a></div>
+			<div class="swiper-slide"><a href="#">기획전</a></div>
+			<div class="swiper-slide"><a href="#">베스트상품</a></div>
+		</div>
+	</div>
+</header>
+
+<script>
+var swiper = new Swiper('#gnb', {
+	pagination: '.swiper-pagination',
+	slidesPerView: 'auto',
+	paginationClickable: true,
+	spaceBetween: 0,
+	freeMode: true
+});
+</script>
+
+<div class="wrapper container-fluid">
+	<?include "../layout/_aside.html"?>
+
+	<article>
+		<section>

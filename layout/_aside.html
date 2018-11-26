@@ -1,0 +1,74 @@
+<style>
+aside {position:fixed; top:0; bottom:0; width:250px; right:-250px; background:#333; color:#fff; z-index:999; overflow: scroll; -webkit-overflow-scrolling:touch;}
+aside ul {list-style:none; margin:0; padding:0;}
+aside ul li {border-bottom:1px solid #444; line-height:30px; padding:10px 20px;}
+</style>
+
+
+<aside>
+	<ul>
+		<li><a href="#">메뉴#01</a></li>
+		<li>메뉴#02</li>
+		<li>메뉴#03</li>
+		<li>메뉴#04</li>
+		<li>메뉴#05</li>
+		<li>메뉴#06</li>
+		<li>메뉴#07</li>
+		<li>메뉴#08</li>
+		<li>메뉴#09</li>
+		<li>메뉴#10</li>
+		<li>메뉴#01</li>
+		<li>메뉴#02</li>
+		<li>메뉴#03</li>
+		<li>메뉴#04</li>
+		<li>메뉴#05</li>
+		<li>메뉴#06</li>
+		<li>메뉴#07</li>
+		<li>메뉴#08</li>
+		<li>메뉴#09</li>
+		<li>메뉴#10</li>
+		<li><a href="#">메뉴#01</a></li>
+	</ul>
+</aside>
+
+
+<script>
+$(function(){
+
+$(".bugger").click(function(){
+	$(this).toggleClass("active");
+	$('.slider-menu-overlay').toggleClass('active');
+	
+	$('aside').animate({
+		right: 0
+	});
+	blockTouchmove = true;
+	scrollTopBody = $(window).scrollTop();
+	$("body").addClass("modal-open").css("top", -scrollTopBody);
+	//$("body").css({position:"fixed", width:"100%"});
+});
+$(".slider-menu-overlay").click(function(){
+	$(this).removeClass('active');
+	$('.bugger').removeClass('active');
+
+	$('aside').animate({
+		right: -250
+	});
+	blockTouchmove = false;
+	$("body").removeClass("modal-open");
+	$("body").scrollTop(scrollTopBody);
+	//$("body").css("position", "static");
+});
+
+
+
+var myScroll, blockTouchmove, scrollTopBody;
+$(function(){
+	myScroll = new IScroll('aside', { mouseWheel: true, scrollbars: false });
+});
+document.addEventListener('touchmove', function(e){ 
+	if (blockTouchmove) e.preventDefault(); 
+}, false);
+
+});
+</script>

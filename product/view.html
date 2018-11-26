@@ -1,0 +1,340 @@
+<?include "../layout/_layout.html"?>
+<?include "../layout/_header.html"?>
+
+<style>
+.table-bordered {font-size:11px; text-align:center;}
+.table-bordered th {background-color:#eee; text-align:center;}
+.tabs-content img {margin:10px 0;}
+</style>
+
+<div class="container porduct-wrap">
+		
+	<div class="maskimg" style="background-image:url(../img/product_12.jpg)"><img src="../img/blank.png" class="img-responsive"></div>
+
+	<div class="caption text-center">
+		<h3 class="goodsnm">[가전] 믹서기 블랙 KR</h3>
+		<p class="price">339,000</p>
+	</div>
+
+	<hr/>
+
+	<dl class="porduct-info">
+		<dt>배송비</dt>
+		<dd>2500원</dd>
+		<dt>적립금</dt>
+		<dd>30</dd>
+		<dt>쿠폰</dt>
+		<dd><a href="#" class="btn btn-warning btn-xs">쿠폰받기</a></dd>
+	</dl>
+
+	<hr/>
+
+<!-- http://designwithpc.com/Plugins/ddSlick#demo -->
+<link href='../../dist/select/select.min.css' rel='stylesheet' type='text/css'>
+<script src='../../dist/select/select.min.js'></script>
+<style>
+.select2-container:focus, .select2-container .select2-selection--single:focus {outline:none;}
+.select2-container--default .select2-selection--single {border-radius:0; border:1px solid #ddd; box-shadow:none; background:#fff; -webkit-appearance: none; height:35px;}
+.select2-container--default .select2-selection--single .select2-selection__rendered {line-height:35px;}
+.select2-container--default .select2-selection--single .select2-selection__arrow {height:32px; right:5px;}
+.select2-dropdown {border-color:#ddd;}
+</style>
+	<div class="option">
+		<select id='social' class="form-control">
+			<option value="">color</option>
+			<option data-color="green">Green</option>
+			<option data-color="red">Red</option>
+		</select>
+	</div>
+<script>
+$(document).ready(function(){
+	$("#social").select2({
+		templateResult: formatState,
+		minimumResultsForSearch: 9999,
+	});
+});
+
+function formatState (state) {
+	if (!state.id) { return state.text; }
+	state.color = $(state.element).data("color");
+	var $state = $(
+		//'<span ><img sytle="display: inline-block;" src="/data/goods/s/' + state.goodsno + '.jpg" width=40 height=40 /> &nbsp; ' + state.text + '</span>'
+		'<span ><div style="width:30px; height:30px; border-radius:100%; display:inline-block; vertical-align:middle; background:' + state.color + '"></div> &nbsp; ' + state.text + '</span>'
+	);
+	return $state;
+}
+</script>
+
+	<!-- 구매하기 버튼 -->
+	<div class="btn-buy-wrap">
+		<div class="btn-fixed"><a href="#" class="btn btn-info btn-buy">구매하기</a></div>
+		<div class="btn-toggle">
+			<div class="toggle-arrow"><i class="fa fa-angle-down"></i></div>
+			<dl>
+				<dt>수량</dt>
+				<dd>
+					<div class="spinner">
+						<button type="button"><i class="icn-minus"></i></button>
+						<input type="text" name="" value="1">
+						<button type="button"><i class="icn-plus"></i></button>
+					</div>
+				</dd>
+				<dt>총 상품 금액</dt>
+				<dd class="price"><strike>3,000 원</strike> <b class="text-info">23,000</b> 원</dd>
+			</dl>
+			<div class="width-2">
+				<!-- btn-pop-cart 클릭시 팝업 :: 소스경로 pop/pop-cart.html -->
+				<a href="#" class="btn btn-primary btn-pop-cart">장바구니</a>
+				<a href="#" class="btn btn-success">바로구매</a>
+			</div>
+		</div>
+	</div>
+	<!-- /구매하기 버튼 -->
+
+	<hr/>
+
+	<div id="product-tabs">
+		<ul class="tabs-header">
+			<li class="active"><a href="#product-detail">상품정보</a></li>
+			<li><a href="#product-review">상품후기</a></li>
+			<li><a href="#product-policy">배송/교환/환불</a></li>
+		</ul>
+
+		<div class="tabs-content">
+			<!-- 상품정보 -->
+			<div id="product-detail" class="active">
+				<table class="table table-bordered">
+					<tbody>
+						<tr>
+							<th>SIZE</th>
+							<th>너비</th>
+							<th>길이</th>
+							<th>두께</th>
+							<th>무게</th>
+						</tr>
+						<tr>
+							<td>S</td>
+							<td>46</td>
+							<td>54.5</td>
+							<td>25</td>
+							<td>72</td>
+						</tr>
+					</tbody>
+				</table>
+
+				<img src="../img/porduct-sample01.jpg" class="img-responsive">
+				<img src="../img/porduct-sample02.jpg" class="img-responsive">				
+			</div>
+
+			<!-- 상품후기 -->
+			<div id="product-review">
+				<div class="items-title">		
+					<h5 class="text-primary">전체 (20)</h5>
+					<span><a href="#" class="btn btn-sm btn-default">상품후기 작성</a></span>		
+				</div>
+				<div class="node-list review">
+					<ul>
+						<li>
+							<div class="clearfix">
+								<div class="pull-left review-icn">
+									<i class="fa fa-star active"></i> <i class="fa fa-star active"></i> <i class="fa fa-star active"></i> <i class="fa fa-star active"></i> <i class="fa fa-star"></i>
+								</div>
+								<div class="pull-right"><a href="#" class="btn btn-xs btn-default">수정</a> <a href="#" class="btn btn-xs btn-default">삭제</a></div>
+							</div>
+
+							<p>상품후기 남겨요! 이런거 잘 안남기는데 완전 귀여워용~ 아기들이 좋아해요~ 너무 잘 쓰고 있습니닷!! 좋은 상품 감사합니다 ㅎ  </p>
+							<h6><b>honggil**</b> 2017-06-10</h6>
+						</li>
+
+						<li>
+							<div class="clearfix">
+								<div class="pull-left review-icn">
+									<i class="fa fa-star active"></i> <i class="fa fa-star active"></i> <i class="fa fa-star active"></i> <i class="fa fa-star active"></i> <i class="fa fa-star"></i>
+								</div>
+								<div class="pull-right"><a href="#" class="btn btn-xs btn-default">수정</a> <a href="#" class="btn btn-xs btn-default">삭제</a></div>
+							</div>
+
+							<p>상품후기 남겨요! 이런거 잘 안남기는데 완전 귀여워용~ 아기들이 좋아해요~ 너무 잘 쓰고 있습니닷!! 좋은 상품 감사합니다 ㅎ  </p>
+							<h6><b>honggil**</b> 2017-06-10</h6>
+						</li>
+						<li>
+							<div class="clearfix">
+								<div class="pull-left review-icn">
+									<i class="fa fa-star active"></i> <i class="fa fa-star active"></i> <i class="fa fa-star active"></i> <i class="fa fa-star active"></i> <i class="fa fa-star"></i>
+								</div>
+								<div class="pull-right"><a href="#" class="btn btn-xs btn-default">수정</a> <a href="#" class="btn btn-xs btn-default">삭제</a></div>
+							</div>
+
+							<p>상품후기 남겨요! 이런거 잘 안남기는데 완전 귀여워용~ 아기들이 좋아해요~ 너무 잘 쓰고 있습니닷!! 좋은 상품 감사합니다 ㅎ  </p>
+							<h6><b>honggil**</b> 2017-06-10</h6>
+						</li>
+						<li>
+							<div class="clearfix">
+								<div class="pull-left review-icn">
+									<i class="fa fa-star active"></i> <i class="fa fa-star active"></i> <i class="fa fa-star active"></i> <i class="fa fa-star active"></i> <i class="fa fa-star"></i>
+								</div>
+								<div class="pull-right"><a href="#" class="btn btn-xs btn-default">수정</a> <a href="#" class="btn btn-xs btn-default">삭제</a></div>
+							</div>
+
+							<p>상품후기 남겨요! 이런거 잘 안남기는데 완전 귀여워용~ 아기들이 좋아해요~ 너무 잘 쓰고 있습니닷!! 좋은 상품 감사합니다 ㅎ  </p>
+							<h6><b>honggil**</b> 2017-06-10</h6>
+						</li>
+						<li>
+							<div class="clearfix">
+								<div class="pull-left review-icn">
+									<i class="fa fa-star active"></i> <i class="fa fa-star active"></i> <i class="fa fa-star active"></i> <i class="fa fa-star active"></i> <i class="fa fa-star"></i>
+								</div>
+								<div class="pull-right"><a href="#" class="btn btn-xs btn-default">수정</a> <a href="#" class="btn btn-xs btn-default">삭제</a></div>
+							</div>
+
+							<p>상품후기 남겨요! 이런거 잘 안남기는데 완전 귀여워용~ 아기들이 좋아해요~ 너무 잘 쓰고 있습니닷!! 좋은 상품 감사합니다 ㅎ  </p>
+							<h6><b>honggil**</b> 2017-06-10</h6>
+						</li>
+					</ul>
+
+					<!-- paging -->
+					<div class="text-center paging">
+						<ul class="page-nav">
+							<li><a href="#"><i class="fa fa-angle-double-left"></i></a></li>
+							<li><a href="#"><i class="fa fa-angle-left"></i></a></li>
+							<li class="num"><b>1</b> / 3</li>
+							<li><a href="#"><i class="fa fa-angle-right"></i></a></li>
+							<li><a href="#"><i class="fa fa-angle-double-right"></i></a></li>
+						</ul>
+					</div>
+					<!-- /paging -->
+				</div>
+			</div>
+
+			<!-- 배송/교환/환불 -->
+			<div id="product-policy">
+				<div class="guidebox">
+					<h6>주문 및 배송은 이렇게 됩니다</h6>
+					<ul class="ul-arrow">
+						<li>30,000원 미만 구매 시 배송료 3,000원 입니다.</li>
+						<li>상품은 주문일로 부터 1일~2일(도서지역 제외) 이내에 배달하는 것을 원칙적으로 하고 있으며, 상품 배송상태는 마이페이지>구매내역에서 확인하실 수 있습니다.</li>
+						<li>평일기준 오후 2시 이전 결제 완료 시 당일 출고되며, 한진택배로 배송됩니다. 금요일 2시 이후 결제 시에는 차주 월요일에는 출고됩니다.</li>
+						<li>배송은 결제 확인 후 진행됩니다.</li>
+						<li>구매를 원하는 상품이나 상품의 사이즈가 있다면 고객센터로 제안해 주세요!</li>
+					</ul>
+				</div>
+
+				<div class="guidebox">
+					<h6>교환 및 환불은 이렇게 됩니다</h6>
+					<ul class="ul-arrow">
+						<li>상품 수령일로부터 7일 이내 반품/환불 가능합니다.</li>
+						<li>변심 반품의 경우 왕복배송비를 차감한 금액이 환불되며, 제품 및 포장 상태가 재판매 가능하여야 합니다.</li>
+						<li>상품 불량인 경우는 배송비를 포함한 전액이 환불됩니다.</li>
+						<li>반품은 ‘전자상거래 등에서의 소비자보호에 관한 법률’에 의거하여, 물품 수령 후 7일 이내에 가능합니다. 반품접수 후 제품입고가 확인 된 후에 환불절차가 진행됩니다.</li>
+						<li>결제방법에 따라 환불절차가 다르게 진행되며 소요기간도 달라질 수 있습니다.</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- 관심상품 -->
+	<div class="product-recommend">
+		<div class="items-title"><h5>Styled With</h5></div>
+
+		<ul class="items">
+			<li>
+				<a href="../product/view.html">
+					<div class="maskimg" style="background-image:url(../img/product_11.jpg)"><img src="../img/blank.png" class="img-responsive"></div>
+					<div class="caption">
+						<p class="goodsnm">[패드릭] Mini Sofa</p>
+						<p class="price">13,500</p>
+					</div>
+				</a>
+			</li>
+			<li>
+				<a href="../product/view.html">
+					<div class="maskimg" style="background-image:url(../img/product_14.jpg)"><img src="../img/blank.png" class="img-responsive"></div>
+					<div class="caption">
+						<p class="goodsnm">[패드릭] Mini Sofa</p>
+						<p class="price">13,500</p>
+					</div>
+				</a>
+			</li>
+			<li>
+				<a href="../product/view.html">
+					<div class="maskimg" style="background-image:url(../img/product_09.jpg)"><img src="../img/blank.png" class="img-responsive"></div>
+					<div class="caption">
+						<p class="goodsnm">[가전] 믹서기 블랙 KR</p>
+						<p class="price">339,000</p>
+					</div>
+				</a>
+			</li>
+		</ul>
+	</div>
+
+</div>
+
+
+
+
+
+
+<script>
+$("#product-tabs .tabs-header li a").click(function(event){
+	event.preventDefault();
+	var posY = $("#product-tabs").position().top;
+	//console.log(posY);
+	posY -= 50;
+	$("html,body").stop().animate({scrollTop: posY});
+
+	$("#product-tabs .tabs-header li").removeClass("active");
+	$(this).parent().addClass("active");
+	$("#product-tabs .tabs-content>div").hide();
+	$(this.hash).show();
+});
+$("#product-review .title h5 a").click(function(event){
+	event.preventDefault();
+	$("#product-review .title h5 a").removeClass("active");
+	$(this).addClass("active");
+	$("#product-review .review-content>div").hide();
+	$(this.hash).show();
+});
+/** 상품상세 탭 스크롤 고정 **/
+$(function(){
+	var TabsTop = $('#product-tabs .tabs-header').offset().top;
+
+	$(window).scroll(function(){
+		var scrolltop = $(window).scrollTop();
+		var widthWrap = $("#product-tabs").width();
+
+		$('#product-tabs .tabs-header').stop();
+		if (scrolltop > TabsTop - 51) {
+			$("#product-tabs .tabs-header").addClass("active").width(widthWrap);
+		} else {
+			$("#product-tabs .tabs-header").removeClass("active");
+		}
+	});
+	$(window).scroll();
+});
+/** 구매하기버튼 **/
+$(".btn-buy-wrap .btn-buy").bind('touchstart', function(event){
+	event.preventDefault();
+	$(".btn-buy-wrap .btn-toggle").addClass("active");
+});
+$(".btn-buy-wrap .toggle-arrow").bind('touchstart', function(event){
+	event.preventDefault();
+	$(".btn-buy-wrap .btn-toggle").removeClass("active");
+});
+$(document).ready(function(){
+
+	var footH = $("footer").offset().top;
+	$(function () {
+		$(window).scroll(function () {
+			if ($(this).scrollTop() > footH - 600) {
+				$('.btn-buy-wrap .btn-toggle').removeClass("active");
+			}
+		});
+	});
+});
+
+
+</script>
+
+
+<?include "../layout/_footer.html"?>

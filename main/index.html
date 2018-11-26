@@ -1,0 +1,178 @@
+<?include "../layout/_layout.html"?>
+<?include "../layout/_header.html"?>
+
+<!-- Swiper -->
+<div class="swiper-container main-swiper">
+	<div class="swiper-wrapper">
+		<div class="swiper-slide">
+			<a href="#">
+				<div class="thumb">
+					<div class="maskimg" style="background-image:url(../img/main01.jpg)">
+						<img src="../img/blank-main.png" class="img-responsive">
+					</div>
+				</div>
+			</a>
+		</div>
+		<div class="swiper-slide">
+			<a href="#">
+				<div class="thumb">
+					<div class="maskimg" style="background-image:url(../img/main02.jpg)">
+						<img src="../img/blank-main.png" class="img-responsive">
+					</div>
+				</div>
+			</a>
+		</div>
+	</div>
+	<!-- Add Pagination -->
+	<div class="swiper-pagination"></div>
+	 <!-- Add Arrows -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+</div>
+<!-- /Swiper -->
+
+
+<div class="container">
+	<a href="../modal/sample.html" target="modal" class="btn btn-block btn-info">모달</a>
+	
+	<div class="goods-list">
+		<div class="items-title">		
+			<h5>아이템</h5>
+			<span class="list">
+				<button class="active"><i class="fa fa-th-large"></i></button>
+				<button><i class="fa fa-th-list"></i></button>
+			</span>		
+		</div>	
+		<ul class="items">
+			<li>
+				<a href="../product/view.html">
+					<div class="maskimg" style="background-image:url(../img/product_12.jpg)"><img src="../img/blank.png" class="img-responsive"></div>
+					<div class="caption">
+						<p class="goodsnm">[패드릭] Mini Sofa</p>
+						<p class="price">13,500</p>
+					</div>
+				</a>
+			</li>
+			<li>
+				<a href="../product/view.html">
+					<div class="maskimg" style="background-image:url(../img/product_09.jpg)"><img src="../img/blank.png" class="img-responsive"></div>
+					<div class="caption">
+						<p class="goodsnm">[가전] 믹서기 블랙 KR</p>
+						<p class="price">339,000</p>
+					</div>
+				</a>
+			</li>
+			<li>
+				<a href="../product/view.html">
+					<div class="maskimg" style="background-image:url(../img/product_14.jpg)"><img src="../img/blank.png" class="img-responsive"></div>
+					<div class="caption">
+						<p class="goodsnm">[바이헤이데이] 핑크가운</p>
+						<p class="price">9,900</p>
+					</div>
+				</a>
+			</li>
+			<li>
+				<a href="../product/view.html">
+					<div class="maskimg" style="background-image:url(../img/product_11.jpg)"><img src="../img/blank.png" class="img-responsive"></div>
+					<div class="caption">
+						<p class="goodsnm">[패브릭] Multi Sofa</p>
+						<p class="price">3,360</p>
+					</div>
+				</a>
+			</li>
+		</ul>
+	</div>
+
+	<div class="goods-list">
+		<div class="items-title">		
+			<h5>패드릭</h5>
+			<span class="list">
+				<button class="active"><i class="fa fa-th-large"></i></button>
+				<button><i class="fa fa-th-list"></i></button>
+			</span>		
+		</div>	
+		<ul class="items">
+			<li>
+				<a href="../product/view.html">
+					<div class="maskimg" style="background-image:url(../img/product_15.jpg)"><img src="../img/blank.png" class="img-responsive"></div>
+					<div class="caption">
+						<p class="goodsnm">[ash blue] 클라우드 린넨 이불</p>						
+						<p class="price">63,000</p>
+					</div>
+				</a>
+			</li>
+			<li>
+				<a href="../product/view.html">
+					<div class="maskimg" style="background-image:url(../img/product_16.jpg)"><img src="../img/blank.png" class="img-responsive"></div>
+					<div class="caption">
+						<p class="goodsnm">[아이르] 누빔 베개커버</p>
+						<p class="price">10,200</p>
+					</div>
+				</a>
+			</li>
+		</ul>
+	</div>
+
+	<div class="goods-list">
+		<div class="items-title">		
+			<h5>푸드</h5>
+			<span class="list">
+				<button class="active"><i class="fa fa-th-large"></i></button>
+				<button><i class="fa fa-th-list"></i></button>
+			</span>		
+		</div>
+		<ul class="items">
+			<li>
+				<a href="../product/view.html">
+					<div class="maskimg" style="background-image:url(../img/product_19.jpg)"><img src="../img/blank.png" class="img-responsive"></div>
+					<div class="caption">
+						<p class="goodsnm">[플레이버] 독일디저트 장수</p>
+						<p class="price">17,000</p>
+					</div>
+				</a>
+			</li>
+			<li>
+				<a href="../product/view.html">
+					<div class="maskimg" style="background-image:url(../img/product_18.jpg)"><img src="../img/blank.png" class="img-responsive"></div>
+					<div class="caption">
+						<p class="goodsnm">[피나포레] 경리단길 말카</p>
+						<p class="price">30,000</p>
+					</div>
+				</a>
+			</li>
+		</ul>
+	</div>
+
+</div>
+
+
+
+
+
+
+<script>
+var swiper = new Swiper('.main-swiper', {
+  pagination: {
+	el: '.swiper-pagination',
+  },
+  navigation: {
+	nextEl: '.swiper-button-next',
+	prevEl: '.swiper-button-prev',
+  },
+});
+
+$(function(){
+	$(".goods-list .list button").click(function(){
+		$(this).parents(".goods-list").find(".list .active").removeClass("active");
+		$(this).addClass("active");
+		if ($(".fa-th-list", this).parent().hasClass("active")) {
+			$(this).parents(".goods-list").children(".items").addClass("th-list");
+		} else {
+			$(this).parents(".goods-list").children(".items").removeClass("th-list");
+		}
+	});
+});
+</script>
+
+
+<?include "../layout/_footer.html"?>
